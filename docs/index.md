@@ -10,6 +10,7 @@ Active Serializer is a simple objects to hash serializer.
 ## Usage
 
 Here's an example serializer:
+
 ```ruby
 class ContactSerializer
   include ActiveSerializer::SerializableObject
@@ -36,11 +37,13 @@ end
 ```
 
 Let's use it:
+
 ```ruby
 ContactSerializer.serialize(contact, home_address, contact_emails)
 ```
 
 And we get a result:
+
 ```ruby
 {
   first_name: "John",
