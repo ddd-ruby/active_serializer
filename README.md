@@ -1,4 +1,9 @@
 # ActiveSerializer
+[![Build Status](https://travis-ci.org/ddd-ruby/active_serializer.png)](https://travis-ci.org/ddd-ruby/active_serializer)
+[![Code Climate](https://codeclimate.com/github/ddd-ruby/active_serializer/badges/gpa.svg)](https://codeclimate.com/github/ddd-ruby/active_serializer)
+[![codecov](https://codecov.io/gh/ddd-ruby/active_serializer/branch/master/graph/badge.svg)](https://codecov.io/gh/ddd-ruby/active_serializer)
+[![Dependency Status](https://gemnasium.com/ddd-ruby/active_serializer.png)](https://gemnasium.com/ddd-ruby/active_serializer)
+
 
 Active Serializer is a simple objects to hash serializer.
 
