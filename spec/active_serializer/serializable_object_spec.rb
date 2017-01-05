@@ -73,7 +73,7 @@ module SerializableObjectTest
         phone_number.number = '123456'
 
         serialized_contact = ContactSerializer.serialize(contact, home_address, contact_emails, [phone_number])
-        serialized_contact.should == {
+        expect(serialized_contact).to eq({
           first_name: "John",
           last_name: "Smith",
           full_name: "John Smith",
@@ -94,7 +94,7 @@ module SerializableObjectTest
               number: '123456'
             }
           ]
-        }
+        })
       end
 
       class ContactsSerializer
@@ -123,7 +123,7 @@ module SerializableObjectTest
         home_address.street  = 'Kosmonavton'
 
         serialized_contacts = ContactsSerializer.serialize([contact1, contact2], home_address)
-        serialized_contacts.should be_an_instance_of(Array)
+        expect(serialized_contacts).to be_a(Array)
       end
 
 
@@ -163,21 +163,21 @@ module SerializableObjectTest
         company.address = address
 
         serialized_company = CompanySerializer.serialize(company, serializable_fields: { name: true, emails: { email: true}, address: { country: true }})
-        serialized_company.should =={
+        expect(serialized_company).to eq({
           name: "MyCo",
           address: {country: "Russia"},
           emails: [
             { email: "test@test.com"  },
             { email: "test2@test.com" }
           ]
-        }
+        })
         serialized_company = CompanySerializer.serialize(company, serializable_fields: { emails: true})
-        serialized_company.should == {
+        expect(serialized_company).to eq({
           emails: [
             { email: "test@test.com"  },
             { email: "test2@test.com" }
           ]
-        }
+        })
       end
     end
   end

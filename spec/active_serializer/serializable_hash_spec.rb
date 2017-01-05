@@ -61,7 +61,7 @@ module SerializableHashTest
         ]
 
         serialized_contact = ContactSerializer.serialize(contact, home_address, contact_emails, phone_numbers)
-        serialized_contact.should == {
+        expect(serialized_contact).to  eq({
           first_name: "John",
           last_name: "Smith",
           full_name: "John Smith",
@@ -82,7 +82,7 @@ module SerializableHashTest
           phone_number: {
             number: '123456'
           }
-        }
+        })
       end
     end
 
@@ -106,7 +106,7 @@ module SerializableHashTest
         }
 
         serialized_contact = ContactIgnoreBlankSerializer.serialize(contact)
-        serialized_contact.should == {}
+        expect(serialized_contact).to eq({})
       end
     end
   end
